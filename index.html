@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Gallery</title>
+<style>
+/* Design and Colors from notes.txt */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff0000, #001a66, #0033ff); /* [cite: 2] */
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Grid layout from notes.txt */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /*  */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s; /* [cite: 5] */
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* [cite: 6] */
+}
+
+/* Lightbox overlay */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<h2>SKC NCC MEMORIES</h2>
+
+<div class="gallery">
+    <img src="image1.jpg" alt="Image 1" onclick="openLightbox(this.src)">
+    <img src="image2.jpg" alt="Image 2" onclick="openLightbox(this.src)">
+    <img src="image3.jpg" alt="Image 3" onclick="openLightbox(this.src)">
+    <img src="image4.jpg" alt="Image 4" onclick="openLightbox(this.src)">
+    <img src="image5.jpg" alt="Image 5" onclick="openLightbox(this.src)">
+    <img src="image6.jpg" alt="Image 6" onclick="openLightbox(this.src)">
+    <img src="image7.jpg" alt="Image 7" onclick="openLightbox(this.src)">
+    <img src="image8.jpg" alt="Image 8" onclick="openLightbox(this.src)">
+    <img src="image9.jpg" alt="Image 9" onclick="openLightbox(this.src)">
+    <img src="image10.jpg" alt="Image 10" onclick="openLightbox(this.src)">
+    <img src="image11.jpg" alt="Image 11" onclick="openLightbox(this.src)">
+    <img src="image12.jpg" alt="Image 12" onclick="openLightbox(this.src)">
+    <img src="image13.jpg" alt="Image 13" onclick="openLightbox(this.src)">
+    <img src="image14.jpg" alt="Image 14" onclick="openLightbox(this.src)">
+    <img src="image15.jpg" alt="Image 15" onclick="openLightbox(this.src)">
+    <img src="image16.jpg" alt="Image 16" onclick="openLightbox(this.src)">
+    <img src="image17.jpg" alt="Image 17" onclick="openLightbox(this.src)">
+    <img src="image18.jpg" alt="Image 18" onclick="openLightbox(this.src)">
+    <img src="image19.jpg" alt="Image 19" onclick="openLightbox(this.src)">
+    <img src="image20.jpg" alt="Image 20" onclick="openLightbox(this.src)">
+    <img src="image21.jpg" alt="Image 21" onclick="openLightbox(this.src)">
+    <img src="image22.jpg" alt="Image 22" onclick="openLightbox(this.src)">
+    <img src="image23.jpg" alt="Image 23" onclick="openLightbox(this.src)">
+    <img src="image24.jpg" alt="Image 24" onclick="openLightbox(this.src)">
+    <img src="image25.jpg" alt="Image 25" onclick="openLightbox(this.src)">
+    <img src="image26.jpg" alt="Image 26" onclick="openLightbox(this.src)">
+    <img src="image27.jpg" alt="Image 27" onclick="openLightbox(this.src)">
+    <img src="image28.jpg" alt="Image 28" onclick="openLightbox(this.src)">
+    <img src="image29.jpg" alt="Image 29" onclick="openLightbox(this.src)">
+    <img src="image30.jpg" alt="Image 30" onclick="openLightbox(this.src)">
+</div>
+
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
+</div>
+
+<script>
+/* Simple function to open the clicked image */
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+</script>
+
+</body>
+</html>
